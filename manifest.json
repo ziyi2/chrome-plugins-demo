@@ -13,8 +13,8 @@
   },
   // 插件调试页面
   "background" : {
-    "page": "html/clock.html"
-    //"scripts": ["js/changeIcon.js"]
+    //"page": "html/clock.html"
+    "scripts": ["js/background.js"]
   },
   //指定脚本js 指定时间run_at 指定注入到什么页面matches
   "content_scripts": [
@@ -28,7 +28,25 @@
     }
   ],
   // 右击扩展图标的选项页
-  "options_page": "html/options.html"
+  "options_page": "html/options.html",
+  // 右键菜单显示扩展应用
+  "permissions": [
+    //启动右键菜单
+    "contextMenus",
+    //启动桌面提醒
+    "notifications"
+  ],
+
+  //桌面提醒的图片声明
+  "web_accessible_resources": [
+    "image/icon16.png"
+  ],
+
+
+  // 地址栏/多功能输入框
+  "omnibox": {
+    "keyword": "hamster"
+  }
 }
 
 

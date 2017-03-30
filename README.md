@@ -12,6 +12,12 @@
 - 可以通过Chrome存储API(content_scripts和background共享数据)或者扩展页面间的通信runtime.sendMessage解决
 - Chrome存储API读写速度更快
 - 选项页面的设置存储可以优先选用localStorage(localStorage不能跨域存储)
+4. popup页面的Js变量
+- 只有在用户点击扩展应用时JavaScript都是重新开始运行的,因此不要指望保存全局变量,而是应该通过localStorage存储.
+5. 几种Js的区别
+- content_scripts的Js 和显示的页面有关系,可以对显示页面的DOM进行修改(background不行)
+- popup页面的Js 只有点击扩展应用时才会执行
+- background域的Js 常驻后台,浏览器启动后自动执行
 
 
 
