@@ -14,7 +14,8 @@
         m = m >= 10 ? m : ('0' + m);
         s = s >= 10 ? s : ('0' + s);
 
-        clock.innerHTML = h + ":" + m + ":" + s;
+        // 不要轻易使用innerHTML和eval(),跨域时会产生危险
+        clock.innerText = h + ":" + m + ":" + s;
 
         setTimeout(function() {
             showTime(clock);

@@ -8,13 +8,27 @@
   },
   "browser_action": {
     "default_title": "时钟",
-    "default_icon": "image/icon16.png",
+    "default_icon": "image/play.png",
     "default_popup": "html/clock.html"
   },
-  // 用于谷歌调试
+  // 插件调试页面
   "background" : {
     "page": "html/clock.html"
-  }
+    //"scripts": ["js/changeIcon.js"]
+  },
+  //指定脚本js 指定时间run_at 指定注入到什么页面matches
+  "content_scripts": [
+    {
+      // 匹配的URL后面必须加/或者/*等,否则加载失败
+      "matches": [
+        "*://www.baidu.com/*"
+      ],
+      "js": ["js/change_baidu.js"]
+      //"run_at": "document_start"
+    }
+  ],
+  // 右击扩展图标的选项页
+  "options_page": "html/options.html"
 }
 
 
