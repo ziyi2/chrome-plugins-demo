@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "clock demo",
+  "version": "1.0.0.0",
+  "description": "This is my first Chrome Plugins demo",
+  "icons": {
+    "16": "image/icon16.png"
+  },
+  "browser_action": {
+    "default_title": "时钟",
+    "default_icon": "image/icon16.png",
+    "default_popup": "html/clock.html"
+  },
+  // 用于谷歌调试
+  "background" : {
+    "page": "html/clock.html"
+  }
+}
+
